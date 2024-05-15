@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min & Max</title>
+</head>
+<body>
+
+
+    <script>
+        let num1 = parseInt(prompt("Enter First Number "));
+        let num2 = parseInt(prompt("Enter Second Number "));
+        let num3 = parseInt(prompt("Enter Third Number "));
+
+        let minnumber =0;
+        let maxnumber =0;
+
+        if(num1 < num2 && num1 < num3){
+            minnumber = num1;
+        }
+        else if(num2 < num1 && num2 < num3){
+            minnumber = num2;
+        }
+        else {
+            minnumber =num3;
+        }
+
+        if(num1 > num2 && num1 > num3){
+            maxnumber = num1;
+        }
+        else if(num2 > num1 && num2 > num3){
+            maxnumber = num2;
+        }
+        else{
+            maxnumber = num3;
+        }
+
+        document.write(minnumber+ "</br>");
+        document.write(maxnumber);
+
+
+    </script>
+    
+</body>
+</html>

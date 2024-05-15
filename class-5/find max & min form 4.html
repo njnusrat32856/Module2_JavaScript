@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let num1= parseInt(prompt("Enter 1st Number "));
+        let num2= parseInt(prompt("Enter 2nd Number "));
+        let num3= parseInt(prompt("Enter 3rd Number "));
+        let num4= parseInt(prompt("Enter 4th Number "));
+
+        let minnumber =0;
+        let maxnumber =0;
+
+        if(num1 < num2 && num1 < num3 && num1 < num4){
+            minnumber= num1;
+        }
+        else if(num2 < num1 && num2 < num3 && num2 <num4){
+            minnumber= num2;
+        }
+        else if(num3 < num1 && num3 < num2 && num3 < num4){
+            minnumber= num3;
+        }
+        else{
+            minnumber= num4;
+        }
+
+        if(num1 > num2 && num1 > num3 && num1 > num4){
+            maxnumber= num1;
+        }
+        else if(num2 > num1 && num2 > num3 && num2 > num4){
+            maxnumber= num2;
+        }
+        else if(num3 > num1 && num3 > num2 && num3 > num4){
+            maxnumber= num3;
+        }
+        else{
+            maxnumber= num4;
+        }
+
+        document.write("This is min Number  " + minnumber+ "</br>");
+        document.write("This is max Number  " + maxnumber);
+    </script>
+
+</body>
+</html>
