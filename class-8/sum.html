@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="">Number 1</label>
+    <input type="number" id="number1">
+    <br>
+    <label for="">Number 2</label>
+    <input type="number" id="number2">
+    <br>
+    <input type="button" value="Sum" onclick="checkSum()">
+
+    <p id="sum"></p>
+
+    <script>
+        
+        function checkSum(){
+            let num1= document.getElementById('number1').value;
+            let num2= document.getElementById('number2').value;
+            
+            let nu1ToInt=parseInt(num1);
+            let nu2ToInt=parseInt(num2);
+
+            let result=nu1ToInt+nu2ToInt;
+
+            document.getElementById('sum').innerHTML=result;
+
+            
+        }
+
+    </script>
+
+</body>
+</html>

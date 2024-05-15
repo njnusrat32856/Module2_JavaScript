@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let userInput =parseInt(prompt("Plz Enter item size "));
+        let myAr=[];
+
+        for(let item=0; item<userInput; item++){
+            let number =prompt("Enter the "+(item+1)+" item");
+            myAr.push(number);
+        }
+
+        document.write("Old- "+myAr);
+        
+        for(let first=0; first<myAr.length; first++){
+            
+            for(let second=0; second<myAr.length-first-1; second++){
+
+                if(parseInt(myAr[second])>parseInt(myAr[second+1])){
+                    let temp=parseInt(myAr[second]);
+                    parseInt([second])=parseInt(myAr[second+1]);
+                    parseInt(myAr[second+1])=temp;
+                }
+            }
+        }
+        document.write("<br>New- "+myAr);
+    </script>
+</body>
+</html>
