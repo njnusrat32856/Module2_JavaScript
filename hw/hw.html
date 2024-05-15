@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="">Price</label>
+    <input type="number" name="" id="price">
+    <br>
+    <label for="">Discount</label>
+    <input type="number" name="" id="discount">
+    <br><br>
+    <!-- <p id="result">Result<input type="number" name="" id=""></p> -->
+    <button type="submit" onclick="discountResult()" value="Submit">Submit</button>
+
+    <p id="result"></p>
+
+    <script>
+        function discountResult(){
+
+        let price = document.getElementById('price').value;
+        let discount = document.getElementById('discount').value;
+
+        let result = parseFloat((price * discount) / 100);
+        document.getElementById('result').innerHTML=result;
+    }
+    </script>
+
+</body>
+
+</html>
