@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let number1 = parseInt(prompt("Enter number 1"));
+        let number2 = parseInt(prompt("Enter Number 2"));
+        let maxnum = Math.max(number1, number1);
+        let minnum = Math.min(number1, number2);
+        let i = 1;
+        let gcd;
+
+        while (i <= number1 && i <= number2) {
+            if (number1 % i == 0 && number2 % i == 0) {
+                gcd = i;
+
+
+            }
+            i++;
+
+        }
+
+        const lcm = (number1 * number2) / gcd;
+
+        document.write("GCD= " + gcd + "<br>LCM= " + lcm);
+        document.write("<br>MaxNum " + maxnum);
+        document.write("<br>MinNum " + minnum);
+    </script>
+</body>
+
+</html>

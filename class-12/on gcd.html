@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const num1 = parseInt(prompt("Enter Number 1 "));
+        const num2 = parseInt(prompt("Enter Number 2"));
+
+
+        function myFunction(a, b) {
+            let smaller = Math.min(a, b);
+            let hcf = 1;
+
+            for (let i = 1; i <= smaller; i++) {
+                if (a % i === 0 && b % i === 0) {
+                    hcf = i;
+                }
+            }
+
+            return hcf;
+        }
+
+
+
+        document.write("GCD of the giving numbers (" + num1 + "," + num2 + ") is:", myFunction(num1, num2));
+
+    </script>
+</body>
+
+</html>
