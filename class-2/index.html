@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Number 1</label>
+    <input type="number" id="number1"><br>
+
+    <label>Number 2</label>
+    <input type="number" id="number2"><br>
+
+    <label>Number 3</label>
+    <input type="number" id="number3"><br>
+
+    <input type="submit" value="Sum" onclick="doSum()"><br>
+    <input type="submit" value="Subtraction" onclick="doSubtraction()"><br>
+    <input type="submit" value="Multiplication" onclick="doMulti()"><br>
+    <input type="submit" value="Modulus" onclick="doModulus()"><br>
+    <input type="submit" value="Division" onclick="doDivision()"><br>
+
+
+    <script>
+
+        function doSum(){
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+            let number3=document.getElementById('number3').value;
+
+            let nu1ToInt=parseFloat(number1);
+            let nu2ToInt=parseFloat(number2);
+            let nu3ToInt=parseFloat(number3);
+
+            let result=nu1ToInt+nu2ToInt+nu3ToInt;
+
+            document.write(result);
+
+
+        }
+
+        function doSubtraction(){
+
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+            let number3=document.getElementById('number3').value;
+
+            let nu1ToInt=parseFloat(number1);
+            let nu2ToInt=parseFloat(number2);
+            let nu3ToInt=parseFloat(number3);
+
+            let result=nu1ToInt-nu2ToInt-nu3ToInt;
+
+            document.write(result);
+        }
+
+        function doMulti(){
+
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+            let number3=document.getElementById('number3').value;
+
+            let nu1ToInt=parseFloat(number1);
+            let nu2ToInt=parseFloat(number2);
+            let nu3ToInt=parseFloat(number3);
+
+            let result=nu1ToInt*nu2ToInt*nu3ToInt;
+
+            document.write(result);
+        }
+
+        function doModulus(){
+
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+            let number3=document.getElementById('number3').value;
+
+            let nu1ToInt=parseFloat(number1);
+            let nu2ToInt=parseFloat(number2);
+            let nu3ToInt=parseFloat(number3);
+
+            let result=nu1ToInt%nu2ToInt%nu3ToInt;
+
+            document.write(result);
+        }
+
+        function doDivision(){
+
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+            let number3=document.getElementById('number3').value;
+
+            let nu1ToInt=parseFloat(number1);
+            let nu2ToInt=parseFloat(number2);
+            let nu3ToInt=parseFloat(number3);
+
+            let result=nu1ToInt/nu2ToInt/nu3ToInt;
+
+            document.write(result);
+        }
+
+    </script>
+
+
+</body>
+
+</html>
