@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .display {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: right;
+            height: 50px;
+            overflow-x: auto;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #003f7f;
+        }
+
+        button.clear {
+            grid-column: span 4;
+            background-color: #dc3545;
+        }
+
+        button.clear:hover {
+            background-color: #a71d2a;
+        }
+
+        button.equals {
+            background-color: #28a745;
+        }
+
+        button.equals:hover {
+            background-color: #1e7e34;
+        }
+
+    </style>
+    
+
+</head>
+<body>
+
+    <main class="container">
+        <section class="card" aria-label="Calculator">
+            <div class="display" id="calculator-display">0</div>
+            <div class="buttons">
+                <button class="btn" data-value="1" aria-label="1">1</button>
+                <button class="btn" data-value="2" aria-label="2">2</button>
+                <button class="btn" data-value="3" aria-label="3">3</button>
+                <button class="btn operator" data-value="+" aria-label="Add">+</button>
+
+                <button class="btn" data-value="4" aria-label="4">4</button>
+                <button class="btn" data-value="5" aria-label="5">5</button>
+                <button class="btn" data-value="6" aria-label="6">6</button>
+                <button class="btn operator" data-value="-" aria-label="Subtract">-</button>
+
+                <button class="btn" data-value="7" aria-label="7">7</button>
+                <button class="btn" data-value="8" aria-label="8">8</button>
+                <button class="btn" data-value="9" aria-label="9">9</button>
+                <button class="btn operator" data-value="*" aria-label="Multiply">*</button>
+
+                <button class="btn" data-value="0" aria-label="0">0</button>
+                <button class="btn" data-value="." aria-label="Decimal">.</button>
+                <button class="btn equals" aria-label="Equals">=</button>
+                <button class="btn operator" data-value="/" aria-label="Divide">/</button>
+
+                <button class="btn clear" aria-label="Clear">Clear</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- <div class="container">
+        <div class="card">
+            <h3>Calculator</h3>
+            <p>
+                <button onclick="
+                calculator += '1';
+                console.log(calculator);">1</button>
+        
+                <button onclick="
+                calculator += '2';
+                console.log(calculator);">2</button>
+        
+                <button onclick="
+                calculator += '3';
+                console.log(calculator);">3</button>
+        
+                <button onclick="
+                calculator += '+';
+                console.log(calculator);">+</button>
+            </p>
+        
+            <p>
+                <button onclick="
+                calculator += '4';
+                console.log(calculator);">4</button>
+        
+                <button onclick="
+                calculator += '5';
+                console.log(calculator);">5</button>
+        
+                <button onclick="
+                calculator += '6';
+                console.log(calculator);">6</button>
+        
+                <button onclick="
+                calculator += '-';
+                console.log(calculator);">-</button>
+            </p>
+        
+            <p>
+                <button onclick="
+                calculator += '7';
+                console.log(calculator);">7</button>
+        
+                <button onclick="
+                calculator += '8';
+                console.log(calculator);">8</button>
+        
+                <button onclick="
+                calculator += '9';
+                console.log(calculator);">9</button>
+        
+                <button onclick="
+                calculator += '*';
+                console.log(calculator);">*</button>
+            </p>
+        
+            <p>
+                <button onclick="
+                calculator += '0';
+                console.log(calculator);">0</button>
+        
+                <button onclick="
+                calculator += '.';
+                console.log(calculator);">.</button>
+        
+                <button onclick="
+                // Note: eval() takes a string and runs it as code.
+                // Avoid using eval() in real world projects since
+                // it can potentially be given harmful code to run.
+                // Only use eval() for learning purposes.
+                calculator = eval(calculator);
+                console.log(calculator);">=</button>
+        
+                <button onclick="
+                calculator += '/';
+                console.log(calculator);">/</button>
+            </p>
+            
+            <p>
+                <button onclick="
+                  calculation = '';
+                  console.log(calculation);
+                ">Clear</button>
+            </p>
+        </div>
+    </div> -->
+
+    <script>
+        // let calculator = '';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let calculator = '';
+            const display = document.getElementById('calculator-display');
+
+            const updateDisplay = (value) => {
+            display.textContent = value || '0';
+        };
+
+        document.querySelectorAll('.btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                const value = button.dataset.value;
+
+                if (button.classList.contains('clear')) {
+                    calculator = '';
+                } else if (button.classList.contains('equals')) {
+                    try {
+                        calculator = eval(calculator).toString();
+                    } catch {
+                        calculator = 'Error';
+                    }
+                } else {
+                    calculator += value;
+                }
+
+                updateDisplay(calculator);
+            });
+        });
+    });
+
+    </script>
+</body>
+</html>

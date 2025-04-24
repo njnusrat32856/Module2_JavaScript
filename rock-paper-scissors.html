@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f3f3f3;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #003f7f;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button id="rock" data-move="Rock">Rock</button>
+    <button id="paper" data-move="Paper">Paper</button>
+    <button id="scissors" data-move="Scissors">Scissors</button>
+
+    <script>
+        const moves = ["Rock", "Paper", "Scissors"];
+
+        function getComputerMove() {
+            const randomIndex = Math.floor(Math.random() * moves.length);
+            return moves[randomIndex];
+        }
+
+        function determineWinner(playerMove, computerMove) {
+            if (playerMove === computerMove) return "It's a tie!";
+            if (
+                (playerMove === "Rock" && computerMove === "Scissors") ||
+                (playerMove === "Paper" && computerMove === "Rock") ||
+                (playerMove === "Scissors" && computerMove === "Paper")
+            ) {
+                return "You win!";
+            }
+            return "You lose!";
+        }
+
+        function playGame(playerMove) {
+            const computerMove = getComputerMove();
+            const result = determineWinner(playerMove, computerMove);
+            alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+        }
+
+        // Add event listeners for the buttons
+        document.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", () => {
+                const playerMove = button.getAttribute("data-move");
+                playGame(playerMove);
+            });
+        });
+    </script>
+</body>
+</html>

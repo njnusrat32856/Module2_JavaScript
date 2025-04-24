@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f3f3f3;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Coin Flip Game</h1>
+    <p>Choose heads or tails to see if you win!</p>
+    <button id="heads">Heads</button>
+    <button id="tails">Tails</button>
+
+    <script>
+        function flipCoin() {
+            return Math.random() < 0.5 ? 'heads' : 'tails';
+        }
+
+        function playGame(playerGuess) {
+            const coinResult = flipCoin();
+            const resultMessage = playerGuess === coinResult 
+                ? `You win! The coin landed on ${coinResult}.` 
+                : `You lose! The coin landed on ${coinResult}.`;
+            alert(resultMessage);
+        }
+
+        // Attach event listeners to buttons
+        document.getElementById('heads').addEventListener('click', () => playGame('heads'));
+        document.getElementById('tails').addEventListener('click', () => playGame('tails'));
+    </script>
+
+    <!-- <script>
+
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        const guess = 'heads';
+        console.log(guess === result ? 'You win!' : 'You lose!');
+
+        // const randomNumber = Math.random();
+        // let result;
+
+        // if (randomNumber < 0.5) {
+        //     result = 'heads';
+        // } else {
+        //     result = 'tails';
+        // }
+
+        // const guess = 'heads';
+
+        // if (guess === result) {
+        //     console.log('You win!');
+        // } else {
+        //     console.log('You lose!');
+        // }
+
+    </script> -->
+</body>
+</html>
